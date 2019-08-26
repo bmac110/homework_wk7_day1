@@ -8,14 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
       todos: [{name: "Buy Shopping", priority: "high"},
     {name: "Clean Bathroom", priority: "low"},
   {name: "Car's MOT", priority: "high"}],
-      newDo: ""
+      newDo: "",
+      newPriority: ""
     },
     methods: {
       saveNewDo: function(){
-        const doToAdd = {name: this.newDo, priority: "low"}
+        const doToAdd = {name: this.newDo, priority: this.newPriority}
         this.todos.push(doToAdd);
         this.newDo = "";
-      }
+      },
+      
     }
   });
-})
+});

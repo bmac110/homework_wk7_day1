@@ -18,9 +18,17 @@
       </li>
     </ul>
 
-    <input type="text" v-model="newDo" />
-    <button @click="saveNewDo">Save New Task</button>
-
+    <div>
+      <input type="text" v-model="newDo" />
+      <button @click="saveNewDo">Save New Task</button>
+    </div>
+    <div>
+      <input type="radio" id="low" value="low" v-model="newPriority">
+      <label for="low">Low</label>
+      <br>
+      <input type="radio" id="high" value="high" v-model="newPriority">
+      <label for="high">High</label>
+    </div>
   </div>
 </body>
 </html>
