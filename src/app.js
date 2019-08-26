@@ -9,15 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
     {name: "Clean Bathroom", priority: "low"},
   {name: "Car's MOT", priority: "high"}],
       newDo: "",
-      newPriority: ""
+      newPriority: "low"
     },
     methods: {
       saveNewDo: function(){
-        const doToAdd = {name: this.newDo, priority: this.newPriority}
-        this.todos.push(doToAdd);
+        const addTask = {name: this.newDo, priority: this.newPriority}
+        this.todos.push(addTask);
         this.newDo = "";
       },
-      
+      setPriority: function(index) {
+        this.todos[index].priority = this.newPriority;
+        if(document.getElementById('delete').checked)
+          this.todos.splice(index,1)
+      },
     }
   });
 });
