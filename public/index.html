@@ -9,7 +9,17 @@
 </head>
 <body>
   <div id="app">
-    <h1></h1>
+    <h1>ToDo's</h1>
+    <ul>
+      <li v-for="(todo, index) in todos" :class="todo.priority ? 'high':'low' ">
+        <span>{{todo.name}}</span>
+        <span v-if="todo.priority === 'low'">Low Priority</span>
+        <span v-if="todo.priority === 'high'">High Priority</span>
+      </li>
+    </ul>
+
+    <input type="text" v-model="newDo" />
+    <button @click="saveNewDo">Save New Task</button>
 
   </div>
 </body>

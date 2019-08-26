@@ -5,7 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: "#app",
     data: {
-      todos: ["Buy shopping", "Clean bathroom", "Car's MOT"]
+      todos: [{name: "Buy Shopping", priority: "high"},
+    {name: "Clean Bathroom", priority: "low"},
+  {name: "Car's MOT", priority: "high"}],
+      newDo: ""
+    },
+    methods: {
+      saveNewDo: function(){
+        const doToAdd = {name: this.newDo, priority: "low"}
+        this.todos.push(doToAdd);
+        this.newDo = "";
+      }
     }
-    });
+  });
 })
